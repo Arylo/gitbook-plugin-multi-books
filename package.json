@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-multi-books",
   "version": "1.0.0",
   "description": "The project is generated in [`arylo-init`](https://www.npmjs.com/package/arylo-init)",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "types": "lib/index.ts",
   "scripts": {
     "clean": "rimraf dist",
@@ -18,10 +18,13 @@
   },
   "keywords": [
     "arylo",
-    "typescript"
+    "typescript",
+    "gitbook",
+    "gitbook-plugin",
+    "gitbook:className"
   ],
   "engines": {
-    "node": ">=6"
+    "gitbook": ">1.x.x"
   },
   "files": [
     "dist",
@@ -38,10 +41,14 @@
   "homepage": "https://github.com/Arylo/gitbook-plugin-multi-books#readme",
   "license": "MIT",
   "yVersion": "2.1.20",
+  "dependencies": {
+    "cheerio": "^0.19.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "@commitlint/lint": "^7.2.1",
+    "@types/cheerio": "^0.22.11",
     "@types/node": "^10.12.12",
     "ava": "^1.0.1",
     "eslint": "^5.10.0",
