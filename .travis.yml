@@ -1,0 +1,51 @@
+language: node_js
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - "10"
+  - "8"
+  - "lts/*"
+
+before_script:
+  - "npm install"
+  - "npm install nyc --global"
+
+script:
+  - "npm run build"
+  - "nyc npm test"
+
+after_success:
+  - "npm install coveralls@~3.0.0 --global"
+  - "nyc report --reporter=text-lcov | coveralls"
+
+before_deploy:
+  - "npm run clean"
+  - "npm run build:prod"
+
+stages:
+  - lint
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: lint
+      script:
+        - "npm run lint"
+      node_js: "lts/*"
+      os: linux
+    - stage: test
+    - stage: deploy
+      script: skip
+      node_js: "lts/*"
+      os: linux
+      deploy:
+        skip_cleanup: true
+        provider: npm
+        email: "arylo.open+npm@gmail.com"
+        api_key: "${NPM_TOKEN}"
+        on:
+          branch: master

@@ -1,0 +1,60 @@
+{
+  "name": "gitbook-plugin-multi-books",
+  "version": "1.0.0",
+  "description": "The project is generated in [`arylo-init`](https://www.npmjs.com/package/arylo-init)",
+  "main": "dist/index.js",
+  "types": "lib/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "tsc": "tsc --locale zh-cn --pretty",
+    "build": "npm run tsc -- -P tsconfig.json",
+    "build:prod": "npm run tsc -- -P tsconfig.prod.json",
+    "build:test": "npm run tsc -- -P tsconfig.test.json",
+    "pretest": "npm run clean && npm run build:test",
+    "test": "ava dist/test/**/*.{spec,e2e}.js",
+    "lint": "npm run lint:typescript && npm run lint:javascript",
+    "lint:typescript": "tslint {lib,test}/**/*.ts",
+    "lint:javascript": "eslint ./**/*.js"
+  },
+  "keywords": [
+    "arylo",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "author": "AryloYeung <arylo.open@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arylo/gitbook-plugin-multi-books.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arylo/gitbook-plugin-multi-books/issues"
+  },
+  "homepage": "https://github.com/Arylo/gitbook-plugin-multi-books#readme",
+  "license": "MIT",
+  "yVersion": "2.1.20",
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@commitlint/lint": "^7.2.1",
+    "@types/node": "^10.12.12",
+    "ava": "^1.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  }
+}
