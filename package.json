@@ -11,7 +11,7 @@
     "build:prod": "npm run tsc -- -P tsconfig.prod.json",
     "build:test": "npm run tsc -- -P tsconfig.test.json",
     "pretest": "npm run clean && npm run build:test",
-    "test": "ava dist/test/**/*.{spec,e2e}.js",
+    "test": "ava 'dist/test/**/*.{spec,e2e}.js'",
     "lint": "npm run lint:typescript && npm run lint:javascript",
     "lint:typescript": "tslint {lib,test}/**/*.ts",
     "lint:javascript": "eslint ./**/*.js"
@@ -40,28 +40,28 @@
   },
   "homepage": "https://github.com/Arylo/gitbook-plugin-multi-books#readme",
   "license": "MIT",
-  "yVersion": "2.1.20",
+  "yVersion": "2.1.24",
   "dependencies": {
     "cheerio": "^0.19.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.2.1",
-    "@commitlint/config-conventional": "^7.1.2",
-    "@commitlint/lint": "^7.2.1",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/lint": "^8.0.0",
     "@types/cheerio": "^0.22.11",
-    "@types/node": "^10.12.12",
-    "ava": "^1.0.1",
+    "@types/node": "^12.0.4",
+    "ava": "^1.4.1",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.1.2",
-    "lint-staged": "^7.3.0",
-    "prettier": "^1.15.3",
-    "rimraf": "^2.6.2",
-    "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   }
 }
