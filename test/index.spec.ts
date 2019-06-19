@@ -1,5 +1,6 @@
 import test from "ava";
 
-test("Default test", (t) => {
-    t.not(true, false);
+test("Asset JS Files", (t) => {
+    const data = require("../lib");
+    t.true(data.website.js.length !== 0);
 });
