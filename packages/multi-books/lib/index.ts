@@ -1,7 +1,8 @@
-import { IPageObject, IPluginItem, isPromise  } from "gitbook-plugin-common";
+import { IPageObject, IPluginItem } from "gitbook-plugin-common";
 import pageFlag = require("gitbook-plugin-page-flag");
+import isPromise = require("is-promise");
 
-const pluginItems: IPluginItem[] = [ pageFlag.pluginItem ];
+const pluginItems: IPluginItem[] = [pageFlag.pluginItem];
 
 const getAssetJsFiles = () => {
     const arr: string[] = [];

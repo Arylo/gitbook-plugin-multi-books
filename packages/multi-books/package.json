@@ -41,6 +41,10 @@
   "license": "MIT",
   "dependencies": {
     "gitbook-plugin-common": "^1.0.0",
-    "gitbook-plugin-page-flag": "^1.0.0"
+    "gitbook-plugin-page-flag": "^1.0.0",
+    "is-promise": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/is-promise": "^2.1.0"
   }
 }

@@ -10,16 +10,15 @@ node_js:
 before_script:
   - npm install
   - npm install nyc@13 --global
-  - lerna bootstrap
 script:
   # - npm run build
   - nyc npm test
 after_success:
   - npm install coveralls@~3.0.0 --global
   - nyc report --reporter=text-lcov | coveralls
-# before_deploy:
-#   - npm run clean
-#   - "npm run build:prod"
+before_deploy:
+  - lerna run clean
+  - lerna run build:prod
 stages:
   - lint
   - test
@@ -33,13 +32,12 @@ jobs:
       os: linux
     - stage: test
     - stage: deploy
-    #   script: skip
-    #   node_js: lts/*
-    #   os: linux
-    #   deploy:
-    #     skip_cleanup: true
-    #     provider: npm
-    #     email: arylo.open+npm@gmail.com
-    #     api_key: "${NPM_TOKEN}"
-    #     "on":
-    #       branch: master
+      node_js: lts/*
+      os: linux
+      deploy:
+        skip_cleanup: true
+        provider: npm
+        email: arylo.open+npm@gmail.com
+        api_key: "${NPM_TOKEN}"
+        "on":
+          branch: master
