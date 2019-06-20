@@ -58,6 +58,7 @@ typings/
 .env
 
 # Node Export Files
-/dist
+packages/*/dist/
+packages/*/tmp/
 
 package-lock.json

@@ -1,4 +1,6 @@
 node_modules/
 bower_components/
 
-dist/
+packages/*/dist/
+packages/*/assets/
+packages/*/tmp/

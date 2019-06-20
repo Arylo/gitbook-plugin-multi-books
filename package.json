@@ -1,19 +1,12 @@
 {
   "name": "gitbook-plugin-multi-books",
   "version": "1.0.0",
-  "description": "The project is generated in [`arylo-init`](https://www.npmjs.com/package/arylo-init)",
+  "description": "about multi books plugins for gitbook",
   "main": "dist/index.js",
-  "types": "lib/index.ts",
   "scripts": {
-    "clean": "rimraf dist",
-    "tsc": "tsc --locale zh-cn --pretty",
-    "build": "npm run tsc -- -P tsconfig.json",
-    "build:prod": "npm run tsc -- -P tsconfig.prod.json",
-    "build:test": "npm run tsc -- -P tsconfig.test.json",
-    "pretest": "npm run clean && npm run build:test",
-    "test": "ava 'dist/test/**/*.{spec,e2e}.js'",
+    "test": "lerna run test",
     "lint": "npm run lint:typescript && npm run lint:javascript",
-    "lint:typescript": "tslint {lib,test}/**/*.ts",
+    "lint:typescript": "tslint packages/*/{lib,test}/**/*.ts",
     "lint:javascript": "eslint ./**/*.js"
   },
   "keywords": [
@@ -23,9 +16,6 @@
     "gitbook-plugin",
     "gitbook:className"
   ],
-  "engines": {
-    "gitbook": ">1.x.x"
-  },
   "files": [
     "dist",
     "lib",
@@ -42,9 +32,6 @@
   "homepage": "https://github.com/Arylo/gitbook-plugin-multi-books#readme",
   "license": "MIT",
   "yVersion": "2.1.24",
-  "dependencies": {
-    "cheerio": "^0.19.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
@@ -59,6 +46,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^2.3.0",
+    "lerna": "^3.15.0",
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.3",

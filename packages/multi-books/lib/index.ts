@@ -1,26 +1,7 @@
-import { readdirSync, statSync } from "fs";
-import { resolve } from "path";
-import { IPageObject } from "./types/gitbook";
-import { IPluginItem } from "./types/plugin";
-import { isPromise } from "./utils";
+import { IPageObject, IPluginItem, isPromise  } from "gitbook-plugin-common";
+import pageFlag = require("gitbook-plugin-page-flag");
 
-const ignoreSet = new Set(["utils", "types"]);
-
-const pluginItems = readdirSync(__dirname)
-    .filter((item) => {
-        if (ignoreSet.has(item)) {
-            return false;
-        }
-        return statSync(resolve(__dirname, item)).isDirectory();
-    })
-    .map((item) => {
-        try {
-            return require(resolve(__dirname, item)) as IPluginItem;
-        } catch (e) {
-            return null;
-        }
-    })
-    .filter((item) => item !== null);
+const pluginItems: IPluginItem[] = [ pageFlag.pluginItem ];
 
 const getAssetJsFiles = () => {
     const arr: string[] = [];

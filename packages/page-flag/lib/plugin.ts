@@ -1,5 +1,5 @@
 import cheerio = require("cheerio");
-import { IPageObject } from "../types/gitbook";
+import { IPageObject } from "gitbook-plugin-common";
 
 const getAddNameScriptTpl = (pageName) => `
     if (window.require) {

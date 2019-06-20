@@ -1,0 +1,45 @@
+{
+  "name": "gitbook-plugin-page-flag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "lib/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "tsc": "tsc --locale zh-cn --pretty",
+    "build": "npm run tsc -- -P .scripts/tsconfig.json",
+    "build:prod": "npm run tsc -- -P .scripts/tsconfig.prod.json",
+    "build:test": "npm run tsc -- -P .scripts/tsconfig.test.json",
+    "pretest": "npm run clean && npm run build:prod && npm run build:test",
+    "test": "ava tmp/test/**/*.{spec,e2e}.js"
+  },
+  "keywords": [
+    "arylo",
+    "typescript",
+    "gitbook",
+    "gitbook-plugin",
+    "pageclass"
+  ],
+  "engines": {
+    "gitbook": ">1.x.x"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "assets"
+  ],
+  "author": "AryloYeung <arylo.open@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arylo/gitbook-plugin-multi-books.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arylo/gitbook-plugin-multi-books/issues"
+  },
+  "homepage": "https://github.com/Arylo/gitbook-plugin-multi-books#readme",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "gitbook-plugin-common": "^1.0.0"
+  }
+}
