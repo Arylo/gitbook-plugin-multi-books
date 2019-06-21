@@ -8,8 +8,7 @@
     "test": "lerna run test",
     "lint": "npm run lint:typescript && npm run lint:javascript",
     "lint:typescript": "tslint packages/*/{lib,test}/**/*.ts",
-    "lint:javascript": "eslint ./**/*.js",
-    "publish": "leran publish"
+    "lint:javascript": "eslint ./**/*.js"
   },
   "keywords": [
     "arylo",

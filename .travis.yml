@@ -19,6 +19,7 @@ after_success:
 before_deploy:
   - lerna run clean
   - lerna run build:prod
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 stages:
   - lint
   - test
@@ -36,8 +37,7 @@ jobs:
       os: linux
       deploy:
         skip_cleanup: true
-        provider: npm
-        email: arylo.open+npm@gmail.com
-        api_key: "${NPM_TOKEN}"
-        "on":
+        provider: script
+        script: npx lerna publish --skip-git
+        on:
           branch: master
